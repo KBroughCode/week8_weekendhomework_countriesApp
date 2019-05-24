@@ -4,7 +4,7 @@ import Form from '../components/Form';
 
 const mapStateToProps = (state) => {
   return {
-    countries: state
+    countriesForm: state.countriesForm
   };
 };
 
@@ -21,20 +21,13 @@ const mapDispatchToProps = (dispatch) =>({
         })
       })
     },
-    getCountry(country){
-      dispatch(()=>{
-        fetch(`https://restcountries.eu/rest/v2/name/${country}?fullText=true`)
-        .then (res => res.json())
-        .then(countryInfo =>{
-          dispatch({
-            type: 'ADD_COUNTRY',
-            countryInfo
-          })
-        })
+    selectedCountry(country){
+        console.log('Hello');
+      dispatch({
+         type: 'ADD_TO_BUCKETLIST',
+         bucketList: country
       })
-
     }
-
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form)

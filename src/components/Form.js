@@ -5,49 +5,49 @@ class Form extends Component{
     console.log(props);
     super(props);
       this.state = {
-        selectedCounty: null
+        selCountry: null
       }
-      this.handlechange = this.handleChange.bind(this)
-
+      console.log(this.selCountry);
+      this.handleChange = this.handleChange.bind(this)
     }
 
-dropDown(){
-  const dropDownList = this.props.countries.map((country, index)=>{
-    return(
-      <option value = {country.name} key = {index} onChange = {this.handleChange}>{country.name}</option>
-    )
-  })
-  return dropDownList
-}
 
 componentDidMount(){
   this.props.getCountriesData();
 }
 
+dropDown(){
+  const dropDownList = this.props.countriesForm.map((country, index)=>{
+    return(
+      <option
+        value = {index}
+        key = {index}
+        index = {index}
+        >
+        {country.name}
+      </option>
+    )
+  })
+  return dropDownList
+}
+
 handleChange(event){
-  this.setState({selectedCounty: event.target.value})
+  console.log("BOO", this.props.countriesForm);
+  this.setState({selCountry: event.target.value})
+  this.props.selectedCountry(this.props.countriesForm[event.target.value])
 }
-
-handleSubmit(event){
-  event.preventdefault()
-  this.props.getCountry(this.state.selectedCounty)
-
-}
-
-
-
 
   render(){
     return(
       <>
-      <h1>Countries</h1>
-      <h2> Bucket List</h2>
-      <form onSubmit = {this.handleSubmit}>
-        <select>
-          <option>Select a Country</option>
-          {this.dropDown()}
-        </select>
-      </form>
+        <h1>Countries</h1>
+        <h2> Bucket List</h2>
+        <form className = "countries-dropdown">
+          <select onChange = {this.handleChange}>
+            <option>Select a Country</option>
+            {this.dropDown()}
+          </select>
+        </form>
       </>
     )
   }

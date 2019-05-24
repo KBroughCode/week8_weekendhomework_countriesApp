@@ -6,17 +6,18 @@ import * as serviceWorker from './serviceWorker';
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux';
 import {createStore, compose, applyMiddleware} from 'redux';
-import HeaderContainer from './containers/HeaderContainer';
+import FormContainer from './containers/FormContainer';
 import CountriesContainer from './containers/CountriesContainer';
-import countriesReducer from './reducers/CountriesReducer';
+import reducer from './reducers/index.js';
 
-const state = []
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(countriesReducer, state, composeEnhancers(applyMiddleware(thunk)));
+const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <Provider store = {store}>
-    <HeaderContainer />
+    <FormContainer />
+    <CountriesContainer />
   </Provider>,
    document.getElementById('root'));
 
