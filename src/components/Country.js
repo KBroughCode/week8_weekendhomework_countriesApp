@@ -7,11 +7,14 @@ const Country = (props) => {
     props.removeCountry(props.index)
   }
 
+  const handleVisitedToggle = (event) => {
+    props.visitedToggle(props.index)
+  }
+
   return(
     <div className = "card">
-      <img src = {props.image} className = "flag"/>
-      <h4>Name:{props.name}</h4>
-      <h5>Visited: </h5>
+      <img src = {props.image} className = "flag" onClick = {handleVisitedToggle}/>
+      <h5>Name:{props.name}</h5>
       <button className = "remove-button" onClick = {handleRemove}>Remove from List</button>
     </div>
   )

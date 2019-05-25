@@ -11,13 +11,16 @@ const CountriesList = (props) => {
     index = {index}
     key = {index}
     removeCountry ={props.removeCountry}
+    visitedToggle ={props.visitedToggle}
     />
   })
 
   return (
-    <div className = "cards-container">
-    { countryCardsContainer }
-    </div>
+    <div>
+      <div className = "cards-container">
+          { countryCardsContainer }
+        </div>
+      </div>
   )
 }
 

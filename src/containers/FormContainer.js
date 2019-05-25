@@ -25,7 +25,8 @@ const mapDispatchToProps = (dispatch) =>({
         console.log('Hello');
       dispatch({
          type: 'ADD_TO_BUCKETLIST',
-         bucketList: country
+         bucketList: country,
+         visited: false
       })
     }
 })

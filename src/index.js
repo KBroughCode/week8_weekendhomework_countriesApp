@@ -17,7 +17,17 @@ const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 ReactDOM.render(
   <Provider store = {store}>
     <FormContainer />
-    <CountriesContainer />
+    <br/>
+    <div className = "background">
+      <div className ="container">
+        <div className = "cover">
+          <div className="passport">PASSPORT</div>
+        </div>
+        <div className="details">
+          <CountriesContainer className = "countries-container"/>
+        </div>
+      </div>
+      </div>
   </Provider>,
    document.getElementById('root'));
 

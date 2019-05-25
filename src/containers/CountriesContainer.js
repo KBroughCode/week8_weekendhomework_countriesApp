@@ -13,8 +13,15 @@ const mapDispatchToProps = (dispatch) => ({
       type:'REMOVE_FROM_BUCKETLIST',
       countryIndex
     })
+  },
+  visitedToggle(countryIndex){
+    dispatch({
+      type:'HAS_VISITED_TOGGLE',
+      countryIndex
+    })
   }
 })
+
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(CountriesList);
