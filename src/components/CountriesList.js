@@ -8,7 +8,9 @@ const CountriesList = (props) => {
     return <Country
     image = {detail.flag}
     name = {detail.name}
+    index = {index}
     key = {index}
+    removeCountry ={props.removeCountry}
     />
   })
 

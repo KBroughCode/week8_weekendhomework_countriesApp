@@ -7,4 +7,14 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(CountriesList);
+const mapDispatchToProps = (dispatch) => ({
+  removeCountry(countryIndex){
+    dispatch({
+      type:'REMOVE_FROM_BUCKETLIST',
+      countryIndex
+    })
+  }
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(CountriesList);
