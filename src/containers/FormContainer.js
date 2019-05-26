@@ -1,7 +1,6 @@
 import {connect} from 'react-redux'
 import Form from '../components/Form';
 
-
 const mapStateToProps = (state) => {
   return {
     countriesForm: state.countriesForm

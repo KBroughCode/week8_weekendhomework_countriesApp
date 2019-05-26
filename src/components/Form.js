@@ -50,7 +50,7 @@ handleChange(event){
   render(){
     return(
       <div className="countries-form">
-        <h1><span>M</span>y <span>T</span>ravel <span>T</span>racker</h1>
+        <h1><span>M</span>y <span>T</span>ravel <span>T</span>racker✈️</h1>
         <form className = "countries-dropdown">
           <select onChange = {this.handleChange}>
             <option>Select a Country</option>

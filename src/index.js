@@ -20,18 +20,18 @@ ReactDOM.render(
   <div className ="form">
     <FormContainer />
   </div>
-    <br/>
-    <div className = "background">
-      <div className ="container">
-        <div className = "cover">
-          <div className="passport">PASSPORT</div>
-        </div>
+  <br/>
+  <div className = "background">
+    <div className ="container">
+      <div className = "cover">
+        <div className="passport">PASSPORT</div>
+      </div>
         <div className="details">
           <CountriesContainer className = "countries-container"/>
         </div>
       </div>
-      </div>
-      </div>
+    </div>
+  </div>
   </Provider>,
    document.getElementById('root'));
 

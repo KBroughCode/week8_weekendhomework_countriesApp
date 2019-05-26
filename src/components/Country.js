@@ -13,7 +13,7 @@ const Country = (props) => {
 
   return(
     <div className = "card">
-      <img src = {props.image} className = "flag" onClick = {handleVisitedToggle}/>
+      <img src = {props.image} className = "flag" onClick ={handleVisitedToggle} />
       <h5 className = "country-name">Name:{props.name}</h5>
       <button className = "remove-button" onClick = {handleRemove}>Remove from List</button>
     </div>
