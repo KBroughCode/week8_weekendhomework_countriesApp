@@ -18,6 +18,8 @@ const CountriesList = (props) => {
   return (
     <div>
       <div className = "cards-container">
+      <h2 className ="title">Bucket List</h2>
+      <br></br>
           { countryCardsContainer }
         </div>
       </div>

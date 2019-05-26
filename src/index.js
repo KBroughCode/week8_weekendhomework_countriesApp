@@ -16,7 +16,10 @@ const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <Provider store = {store}>
+  <div className = "page-content">
+  <div className ="form">
     <FormContainer />
+  </div>
     <br/>
     <div className = "background">
       <div className ="container">
@@ -26,6 +29,7 @@ ReactDOM.render(
         <div className="details">
           <CountriesContainer className = "countries-container"/>
         </div>
+      </div>
       </div>
       </div>
   </Provider>,

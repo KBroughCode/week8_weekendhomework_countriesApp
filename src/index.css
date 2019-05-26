@@ -8,12 +8,29 @@ body {
   background: url('https://www.crunchy-vegan.com/wp-content/uploads/2017/06/trip-plan.jpeg');
   background-repeat: no-repeat;
   background-size: 100%;
-
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.countries-form{
+  margin:2px;
+  padding: inherit;
+  margin-bottom: 5px;
+}
+
+.countries-form h1 span{
+  font-size: 40px;
+  color: lightblue;
+}
+
+.form{
+  background-color: black;
+  opacity: 0.7;
+  color: white;
+  height: 130px;
 }
 
 
@@ -27,13 +44,13 @@ code {
   height: 570px;
   transform-style: preserve-3d;
   transform: translate(-50%,-50%) perspective(2000px);
-  box-shadow:inset 300px 0 50px rgba(0,0,0,.5), 0,20px,100px rgba(0,0,0,.5);
+  box-shadow: 300px 0 50px rgba(0,0,0,.5), 0,20px,100px rgba(0,0,0,.5);
   transition: 1s;
 }
 
 .container:hover{
   transform: translate(-50%,-50%) perspective(2000px) rotate(-10deg);
-  box-shadow:inset 20px 0 50px rgba(0,0,0,.5), 0,10px,100px rgba(0,0,0,.5);
+  box-shadow: 20px 0 50px rgba(0,0,0,.5), 0,10px,100px rgba(0,0,0,.5);
 }
 
 .container:before{
@@ -70,9 +87,16 @@ code {
   transform: rotateY(-135deg);
 }
 
+
+.container .details .title{
+  position: fixed;
+  top: 0;
+  left: 32%;
+
+}
 .container .details{
   position: absolute;
-  top: 0;
+  top: 7%;
   left: 0;
   box-sizing: border-box;
   padding:10px;
@@ -93,7 +117,6 @@ code {
   color: #DAA520;
   text-decoration: underline;
   text-shadow: 200;
-  font-size: 40px
-
+  font-size: 40px;
 
 }

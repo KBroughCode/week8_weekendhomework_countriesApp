@@ -13,8 +13,18 @@ class Form extends Component{
 
 
 componentDidMount(){
+  this.visitedProperty()
   this.props.getCountriesData();
 }
+
+visitedProperty(){
+  console.log("howdy");
+  const visitedProp = this.props.countriesForm.forEach((country)=>{
+    return country.visited = false;
+  })
+  return visitedProp
+}
+
 
 dropDown(){
   const dropDownList = this.props.countriesForm.map((country, index)=>{
@@ -39,16 +49,15 @@ handleChange(event){
 
   render(){
     return(
-      <>
-        <h1>Countries</h1>
-        <h2> Bucket List</h2>
+      <div className="countries-form">
+        <h1><span>M</span>y <span>T</span>ravel <span>T</span>racker</h1>
         <form className = "countries-dropdown">
           <select onChange = {this.handleChange}>
             <option>Select a Country</option>
             {this.dropDown()}
           </select>
         </form>
-      </>
+      </div>
     )
   }
 }

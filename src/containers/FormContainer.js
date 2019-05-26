@@ -14,9 +14,13 @@ const mapDispatchToProps = (dispatch) =>({
         fetch('https://restcountries.eu/rest/v2/all?fields=name;flag')
         .then (res => res.json())
         .then(countriesData =>{
+          countriesData.map((country,index)=>{
+		        country.visited=false;
+            country.id=index;
+          })
           dispatch({
             type: 'GET_COUNTRIES',
-            countriesData
+            countriesData,
           })
         })
       })
@@ -26,7 +30,6 @@ const mapDispatchToProps = (dispatch) =>({
       dispatch({
          type: 'ADD_TO_BUCKETLIST',
          bucketList: country,
-         visited: false
       })
     }
 })

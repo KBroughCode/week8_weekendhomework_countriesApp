@@ -6,13 +6,14 @@ const bucketListReducer = (state = [], action) => {
       return [...state.slice(0, action.countryIndex),
               ...state.slice(action.countryIndex + 1)]
     case 'HAS_VISITED_TOGGLE':
-      const visitedInfo = state.map((country, index)=>{
+      const visitedInfo = state.bucketList.map((country, index)=>{
         if (country.index === action.countryIndex){
           return {...country,visited:true}
         }else {
           return country
         }
       })
+      return {...state, bucketList: visitedInfo}
     default:
       return state
   }

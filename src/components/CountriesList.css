@@ -1,7 +1,15 @@
 
-
-
 .cards-container{
   display: flex;
   flex-wrap: wrap;
+}
+
+.title{
+  text-align: center;
+  left: 50%;
+  font-family: monospace;
+  font-size: 25px;
+  text-decoration: underline;
+
+
 }
