@@ -7,24 +7,13 @@ class Form extends Component{
       this.state = {
         selCountry: null
       }
-      console.log(this.selCountry);
       this.handleChange = this.handleChange.bind(this)
     }
 
 
 componentDidMount(){
-  this.visitedProperty()
   this.props.getCountriesData();
 }
-
-visitedProperty(){
-  console.log("howdy");
-  const visitedProp = this.props.countriesForm.forEach((country)=>{
-    return country.visited = false;
-  })
-  return visitedProp
-}
-
 
 dropDown(){
   const dropDownList = this.props.countriesForm.map((country, index)=>{
@@ -42,7 +31,6 @@ dropDown(){
 }
 
 handleChange(event){
-  console.log("BOO", this.props.countriesForm);
   this.setState({selCountry: event.target.value})
   this.props.selectedCountry(this.props.countriesForm[event.target.value])
 }

@@ -3,15 +3,15 @@ import Country from './Country';
 import './CountriesList.css'
 
 const CountriesList = (props) => {
-  console.log(props.bucketList);
-  const countryCardsContainer = props.bucketList.map((detail, index)=>{
+  const countryCardsContainer = props.bucketList.map((country, index)=>{
     return <Country
-    image = {detail.flag}
-    name = {detail.name}
+    image = {country.flag}
+    name = {country.name}
     index = {index}
     key = {index}
-    removeCountry ={props.removeCountry}
-    visitedToggle ={props.visitedToggle}
+    id = {country.id}
+    removeCountry = {props.removeCountry}
+    visitedToggle = {props.visitedToggle}
     />
   })
 

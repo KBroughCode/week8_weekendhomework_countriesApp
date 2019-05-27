@@ -8,7 +8,7 @@ const Country = (props) => {
   }
 
   const handleVisitedToggle = (event) => {
-    props.visitedToggle(props.index)
+    props.visitedToggle(props.id)
   }
 
   return(

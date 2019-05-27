@@ -25,7 +25,6 @@ const mapDispatchToProps = (dispatch) =>({
       })
     },
     selectedCountry(country){
-        console.log('Hello');
       dispatch({
          type: 'ADD_TO_BUCKETLIST',
          bucketList: country,
